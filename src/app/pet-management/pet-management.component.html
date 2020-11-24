@@ -7,9 +7,9 @@
       <div class=" rounded display-pet-type">
         <p class="list-group-item border-0 bg-transparent text-left user"><i class="fas fa-user-alt"></i> {{user?.name}}</p>
 
-            <div *ngIf="isAdmin">
+            <div *ngIf="isAdmin" class="petFinderList">
               <ul class="list-group">
-                <li class="list-group-item source"><a href="javascript:;" (click)="onPetFinderApi()">Petfinder API ({{totalPetFromAPI}})</a></li>
+                <li class="list-group-item source apiTitle"><a href="javascript:;" (click)="onPetFinderApi()">Petfinder API ({{totalPetFromAPI}})</a></li>
                     <div *ngIf="isSourceFromAPI" >
                       <ul class="list-group pl-4" *ngFor="let pet of petTypesFromAPI; let i = index">
                         <li class="list-group-item align-items-center">

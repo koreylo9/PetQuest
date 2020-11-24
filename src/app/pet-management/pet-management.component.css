@@ -75,3 +75,13 @@ li {
 h5{
   font-size: medium;
 }
+
+.apiTitle{
+  padding:10px;
+}
+
+@media (max-width: 992px) {
+  .petFinderList{
+    float: left;
+  }
+}
