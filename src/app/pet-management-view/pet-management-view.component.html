@@ -1,5 +1,5 @@
 <div class="mt-4 ml-4">
-  <a class="backBtn" (click)="goBack()"  routerLinkActive="active" ><i class="fas fa-chevron-left"></i> Back</a>
+  <a class="backBtn" (click)="goBack()" routerLinkActive="active"><i class="fas fa-chevron-left"></i> Back</a>
 </div>
 
 <div class="container mt-4 mb-4">
@@ -8,7 +8,8 @@
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item" *ngFor="let image of pet?.photos let i = index" [ngClass]="{'active' : i == 0}">
-            <img class="d-block img-responsive w-100" [src]="image.medium" onerror="this.src='assets/images/notfound.png'" alt="First slide">
+            <img class="d-block img-responsive w-100" [src]="image.medium"
+                 onerror="this.src='assets/images/notfound.png'" alt="First slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -80,60 +81,61 @@
             <i class="fas fa-check">&nbsp;&nbsp;</i>House trained
           </div>
 
-          <div class="col-4 pt-2" *ngIf="pet?.attributes?.spayed_neutered">
-            <i class="fas fa-check">&nbsp;&nbsp;</i>Spayed neutered
-          </div>
 
-          <div class="col-4 pt-2" *ngIf="pet?.attributes?.shots_current">
-            <i class="fas fa-check">&nbsp;&nbsp;</i>Vaccinations up to date
-          </div>
-
-          <div class="col-4 pt-2" *ngIf="pet?.attributes?.declawed">
-            <i class="fas fa-check">&nbsp;&nbsp;</i>Declawed
-          </div>
-
-          <div class="col-4 pt-2" *ngIf="pet?.attributes?.special_needs">
-            <i class="fas fa-check">&nbsp;&nbsp;</i>Special needs
-          </div>
+        <div class="col-4 pt-2" *ngIf="pet?.attributes?.spayed_neutered">
+          <i class="fas fa-check">&nbsp;&nbsp;</i>Spayed neutered
         </div>
 
-        <hr>
-        <h4>My Story</h4>
-        <div class="pl-3">
-          <p>{{pet?.description}}</p>
-
+        <div class="col-4 pt-2" *ngIf="pet?.attributes?.shots_current">
+          <i class="fas fa-check">&nbsp;&nbsp;</i>Vaccinations up to date
         </div>
 
+        <div class="col-4 pt-2" *ngIf="pet?.attributes?.declawed">
+          <i class="fas fa-check">&nbsp;&nbsp;</i>Declawed
+        </div>
 
-        <hr>
-        <h4>Contact Info</h4>
-        <table class="table">
-          <tr>
-            <td class="describe">Rescue</td>
-            <td class="success">{{pet?.organization_id}}</td>
-            <td class="describe">Email</td>
-            <td class="danger">{{pet?.contact.email}}</td>
-          </tr>
+        <div class="col-4 pt-2" *ngIf="pet?.attributes?.special_needs">
+          <i class="fas fa-check">&nbsp;&nbsp;</i>Special needs
+        </div>
+      </div>
 
-          <tr>
-            <td class="describe">Phone</td>
-            <td class="success">{{pet?.contact.phone}}</td>
-            <td class="describe">Address</td>
-            <td class="danger">
-              {{pet?.contact?.address?.address1}}
-              {{pet?.contact?.address?.address2}}
-            </td>
-          </tr>
+      <hr>
+      <h4>My Story</h4>
+      <div class="pl-3">
+        <p>{{pet?.description}}</p>
 
-          <tr>
-            <td class="describe">City</td>
-            <td class="success">{{pet?.contact?.address?.city}}</td>
-            <td class="describe">State</td>
-            <td class="success">{{pet?.contact?.address?.state}}</td>
-          </tr>
-        </table>
+      </div>
 
+
+      <hr>
+      <h4>Contact Info</h4>
+      <table class="table">
+        <tr>
+          <td class="describe">Rescue</td>
+          <td class="success">{{pet?.organization_id}}</td>
+          <td class="describe">Email</td>
+          <td class="danger">{{pet?.contact.email}}</td>
+        </tr>
+
+        <tr>
+          <td class="describe">Phone</td>
+          <td class="success">{{pet?.contact.phone}}</td>
+          <td class="describe">Address</td>
+          <td class="danger">
+            {{pet?.contact?.address?.address1}}
+            {{pet?.contact?.address?.address2}}
+          </td>
+        </tr>
+
+        <tr>
+          <td class="describe">City</td>
+          <td class="success">{{pet?.contact?.address?.city}}</td>
+          <td class="describe">State</td>
+          <td class="success">{{pet?.contact?.address?.state}}</td>
+        </tr>
+      </table>
+
+    </div>
   </div>
-</div>
 
-<app-pet-inquire [pet]='pet'></app-pet-inquire>
+  <app-pet-inquire [pet]='pet'></app-pet-inquire>
